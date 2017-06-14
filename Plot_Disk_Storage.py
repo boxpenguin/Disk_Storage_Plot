@@ -7,7 +7,7 @@ Load archival data
 Load all newer data
 """
 # path = "/var/www/html/_admin/Disk_Storage/" # ubuntu dev
-path = "/Users/juehara/opt/clara-disk/Disk_Storage/" # mac dev
+path = "/Users/juehara/opt/Disk_Storage_Plot/Disk_Storage/" # mac dev
 archive_file = "archive/archived_Disk_Storage-1.csv"
 transpose_file = "archive/diskstorage-transpose-1.csv"
 
