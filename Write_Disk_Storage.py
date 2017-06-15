@@ -23,7 +23,7 @@ media_loc = ["/media "]
 media_val = [""]
 danish_loc = ["/media/DANISH "]
 danish_val = [""]
-# donut_loc = ["/Volumes/DATA/media/DONUT"]
+# donut_loc = ["/media/DONUT "]
 # donut_val = [""]
 eclair_loc = ["/media/ECLAIR "]
 eclair_val = [""]
@@ -91,7 +91,7 @@ with open(file, 'w') as csvfile:
         writearray(writer, backup_loc,backup_val, "Backups")
         writearray(writer, media_loc,media_val, "Storage", False)
         writearray(writer, danish_loc,danish_val, "DANISH", False)
-        # writearray(writer, donut_loc,donut_val, "DONUT")
+        # writearray(writer, donut_loc,donut_val, "DONUT", False)
         writearray(writer, eclair_loc,eclair_val, "ECLAIR", False)
         writearray(writer, granola_loc,granola_val, "GRANOLA", False)
         writearray(writer, mochi_loc,mochi_val, "MOCHI", False)

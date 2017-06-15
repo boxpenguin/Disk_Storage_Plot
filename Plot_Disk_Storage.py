@@ -30,6 +30,7 @@ eclair_array = []
 granola_array = []
 mochi_array = []
 mousse_array = []
+
 # Archive Data
 with open(path+transpose_file) as archive_csv:
     read = csv.reader(archive_csv, delimiter=',')
@@ -130,12 +131,15 @@ plotly.tools.set_credentials_file(username='jordan.uehara', api_key='Ukl8ZY0ZiKH
 
 plotly.tools.set_config_file(world_readable=True, sharing='public')
 
+# http://paletton.com/
+colors1 = ['rgb(22,22,22)']
+
 trace1 = go.Scatter(
     x = date_array,
     y = tv_array,
     name = "TV Shows",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(13,93,183)'),
         width = 2,
         dash = 'line')
 )
@@ -144,7 +148,7 @@ trace2 = go.Scatter(
     y = movies_array,
     name = "Movies",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(0,186,121)'),
         width = 2,
         dash = 'line')
 )
@@ -153,7 +157,7 @@ trace3 = go.Scatter(
     y = anime_array,
     name = "Anime",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(46,23,191'),
         width = 2,
         dash = 'line')
 )
@@ -162,7 +166,7 @@ trace4 = go.Scatter(
     y = special_array,
     name = "Specials",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(255,154,0)'),
         width = 2,
         dash = 'line')
 )
@@ -171,7 +175,7 @@ trace5 = go.Scatter(
     y = user_array,
     name = "Home dirs",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(14,58,107)'),
         width = 2,
         dash = 'line')
 )
@@ -180,7 +184,7 @@ trace6 = go.Scatter(
     y = plex_array,
     name = "Plex",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(7,110,73)'),
         width = 2,
         dash = 'line')
 )
@@ -189,7 +193,7 @@ trace7 = go.Scatter(
     y = music_array,
     name = "Music",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(33,21,113)'),
         width = 2,
         dash = 'line')
 )
@@ -198,7 +202,7 @@ trace8 = go.Scatter(
     y = backups_array,
     name = "Backup",
     line = dict(
-        color = ('rgb(22,22,22)'),
+        color = ('rgb(164,103,10)'),
         width = 2,
         dash = 'line')
 )
@@ -207,7 +211,7 @@ trace9 = go.Scatter(
     y = media_array,
     name = "Total Storage",
     line = dict(
-        color = ('rgb(22,96,167)'),
+        color = ('rgb(6,110,102)'),
         width = 2,
         dash = 'line')
 )
@@ -216,7 +220,7 @@ trace10 = go.Scatter(
     y = danish_array,
     name = "DANISH Storage",
     line = dict(
-        color = ('rgb(22,96,167)'),
+        color = ('rgb(179,164, 10)'),
         width = 2,
         dash = 'line')
 )
@@ -225,7 +229,7 @@ trace11 = go.Scatter(
     y = eclair_array,
     name = "ECLAIR Storage",
     line = dict(
-        color = ('rgb(22,96,167)'),
+        color = ('rgb(101,  9,117)'),
         width = 2,
         dash = 'line')
 )
@@ -234,7 +238,7 @@ trace12 = go.Scatter(
     y = granola_array,
     name = "GRANOLA Storage",
     line = dict(
-        color = ('rgb(22,96,167)'),
+        color = ('rgb(179, 83, 10)'),
         width = 2,
         dash = 'line')
 )
@@ -243,7 +247,7 @@ trace13 = go.Scatter(
     y = mochi_array,
     name = "MOCHI Storage",
     line = dict(
-        color = ('rgb(22,96,167)'),
+        color = ('rgb(3, 80, 74)'),
         width = 2,
         dash = 'line')
 )
@@ -252,13 +256,14 @@ trace14 = go.Scatter(
     y = mousse_array,
     name = "MOUSSE Storage",
     line = dict(
-        color = ('rgb(22,96,167)'),
+        color = ('rgb(130,119,  5'),
         width = 2,
         dash = 'line')
 )
 
-libraries = [trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8] #, trace9, trace10, trace11, trace12, trace13, trace14 ]
+libraries = [trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8]
 drives = [trace9, trace10, trace11, trace12, trace13, trace14]
+
 layout = dict(title = "Storage",
     xaxis = dict(title = "Week"),
     yaxis = dict(title = "GB")
