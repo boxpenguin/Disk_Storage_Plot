@@ -1,6 +1,7 @@
 #!/usr/bin/python3.5
 import csv, time, subprocess, re
 date = time.strftime("%Y-%m-%d")
+path = "/var/www/html/_admin/Disk_Storage/new/"
 file = ("Disk_storage-{0}.csv" .format(date))
 
 tv_shows_loc = ["/media/DANISH/Media/TV\ Shows"]
@@ -52,6 +53,17 @@ def fillarray(array_loc, array_val):
     print (array_val)
     print (array_loc)
 
+def writearray(write, array_loc, array_val, name, multi=True):
+    i = 0
+    for items in array_loc:
+        write.writerow([array_val[i], array_loc[i]])
+        i += 1
+    if multi == True:
+        write.writerow([sum(array_val), '{0} Total' .format(name)])
+
+"""
+Writing section
+"""
 fillarray(tv_shows_loc,tv_shows_val)
 fillarray(movies_loc,movies_val)
 fillarray(anime_loc,anime_val)
@@ -68,18 +80,7 @@ fillarray(granola_loc,granola_val)
 fillarray(mochi_loc,mochi_val)
 fillarray(mousse_loc,mousse_val)
 
-def writearray(write, array_loc, array_val, name, multi=True):
-    i = 0
-    for items in array_loc:
-        write.writerow([array_val[i], array_loc[i]])
-        i += 1
-    if multi == True:
-        write.writerow([sum(array_val), '{0} Total' .format(name)])
-
-"""
-Writing section
-"""
-with open(file, 'w') as csvfile:
+with open(path+file, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         writearray(writer, anime_loc, anime_val, "Anime")
         writearray(writer, tv_shows_loc,tv_shows_val, "TV Shows")
